@@ -32,6 +32,7 @@ const ProductScreen = () => {
   } = useGetProductDetailsQuery(productId);
 
   const addToCarthandler = () => {
+    //dispatch to call the addToCartFunction for redux
     dispatch(addToCart({ ...product, qty }));
     navigate("/cart");
   };
