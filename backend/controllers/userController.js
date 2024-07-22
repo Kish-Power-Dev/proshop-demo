@@ -130,7 +130,7 @@ const getUsers = asyncHandler(async (req, res) => {
 // @route   GET /api/users/:id
 // @access  Private/Admin
 const getUserByID = asyncHandler(async (req, res) => {
-  const user = await User.find(req.params.id);
+  const user = await User.findById(req.params.id);
 
   if (user) {
     res.status(200).json(user);
@@ -163,7 +163,7 @@ const deleteUser = asyncHandler(async (req, res) => {
 // @route   UPDATE /api/users/:id
 // @access  Private/Admin
 const updateUser = asyncHandler(async (req, res) => {
-  const user = await User.find(req.params.id);
+  const user = await User.findById(req.params.id);
 
   if (user) {
     user.name = req.body.name || user.name;
