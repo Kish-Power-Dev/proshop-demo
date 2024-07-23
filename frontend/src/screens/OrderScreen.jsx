@@ -59,11 +59,11 @@ const OrderScreen = () => {
     }
   }, [order, paypal, paypalDispatch, loadingPayPal, errorPayPal]);
 
-  async function onApproveTest() {
-    await payOrder({ orderId, details: { payer: {} } });
-    refetch();
-    toast.success("Payment Successful");
-  }
+  // async function onApproveTest() {
+  //   await payOrder({ orderId, details: { payer: {} } });
+  //   refetch();
+  //   toast.success("Payment Successful");
+  // }
 
   function onApprove(data, actions) {
     return actions.order.capture().then(async function (details) {

@@ -6,7 +6,6 @@ import {
   ListGroup,
   Image,
   Form,
-  Badge,
   Card,
   Button,
 } from "react-bootstrap";
