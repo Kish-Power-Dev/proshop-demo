@@ -29,7 +29,7 @@ const ProductEditScreen = () => {
     error,
   } = useGetProductDetailsQuery(productId);
 
-  const [updateProduct, { isLoading: lodaingUpdate }] =
+  const [updateProduct, { isLoading: loadingUpdate }] =
     useUpdateProductMutation();
 
   const [uploadProductImage, { isLoading: loadingUpload }] =
@@ -92,7 +92,7 @@ const ProductEditScreen = () => {
       </Link>
       <FormContainer>
         <h1>Edit Product</h1>
-        {lodaingUpdate && <Loader />}
+        {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
         ) : error ? (
@@ -133,6 +133,7 @@ const ProductEditScreen = () => {
                 onChange={uploadFileHandler}
               ></Form.Control>
             </Form.Group>
+            {loadingUpload && <Loader />}
 
             <Form.Group controlId="brand" className="my-2">
               <Form.Label>Brand</Form.Label>
